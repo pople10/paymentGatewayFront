@@ -37,6 +37,18 @@ public class Alert extends SweetAlertDialog {
                 }
             });
         }
+        if(super.getAlerType()==Alert.ERROR&&super.getContentText()!=null&&super.getContentText().equals("Your account is not verified yet"))
+        {
+            setCancelText("Later");
+            setConfirmText("Verify");
+            setConfirmClickListener(new OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    getContext().startActivity(new Intent(getContext(),VerifyActivity.class));
+                    sweetAlertDialog.dismiss();
+                }
+            });
+        }
         super.show();
     }
 }
