@@ -1,0 +1,42 @@
+package com.trackiness.fastpay;
+
+import android.content.Context;
+import android.content.Intent;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
+public class Alert extends SweetAlertDialog {
+    public static int WARNING = SweetAlertDialog.WARNING_TYPE;
+    public static int ERROR = SweetAlertDialog.ERROR_TYPE;
+    public static int SUCCESS = SweetAlertDialog.SUCCESS_TYPE;
+
+    public Alert(Context context) {
+        super(context);
+        super.setTitle("Information");
+    }
+
+    public Alert(Context context, int alertType) {
+        super(context, alertType);
+        if(super.getAlerType()==WARNING)
+            super.setTitle("Warning");
+        if(super.getAlerType()==ERROR)
+            super.setTitle("Error");
+        if(super.getAlerType()==SUCCESS)
+            super.setTitle("Success");
+    }
+
+    @Override
+    public void show() {
+        if(super.getAlerType()==Alert.ERROR&&super.getContentText()!=null&&super.getContentText().equals(getContext().getString(R.string.internal_error)))
+        {
+            setConfirmClickListener(new OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    getContext().startActivity(new Intent(getContext(),ContactUsActivity.class));
+                    sweetAlertDialog.dismiss();
+                }
+            });
+        }
+        super.show();
+    }
+}

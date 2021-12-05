@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_statistic"
+        android:icon="@drawable/ic_baseline_assessment_24"
+        android:title="Statistic" />
+    <item
+        android:id="@+id/navigation_qrcode"
+        android:title=""
+        android:enabled="false"/>
+
+    <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/ic_baseline_account_balance_wallet_24"
+        android:title="Cart" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Profile" />
+
+</menu>

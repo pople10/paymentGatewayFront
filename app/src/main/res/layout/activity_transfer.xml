@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TransferActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/transaction_done"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="30dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/done_animation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_marginBottom="-70dp"
+                        app:cardCornerRadius="55dp">
+
+                        <FrameLayout
+                            android:layout_width="110dp"
+                            android:layout_height="110dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="40dp">
+
+                                <LinearLayout
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/primary"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:rotation="-10"
+                                        android:src="@drawable/ic_baseline_done_24" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <View
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_gravity="center"
+                                android:alpha=".1"
+                                android:background="@color/primary" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="8dp"
+                            android:outlineAmbientShadowColor="@color/black"
+                            android:outlineSpotShadowColor="@color/black"
+                            android:paddingBottom="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="8dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="20dp"
+                                android:paddingTop="80dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Transfer Success"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/TextRegisterG"
+                                    android:textFontWeight="700"
+                                    android:textSize="25sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Date"
+                                        android:textAlignment="textStart"
+                                        android:textColor="@color/gray_600"
+                                        android:textFontWeight="500"
+                                        android:textSize="17sp" />
+
+                                    <TextView
+                                        android:id="@+id/transferDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Loading..."
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/TextRegisterG"
+                                        android:textFontWeight="500"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMinTextSize="2sp"
+                                        app:autoSizeMaxTextSize="100sp"
+                                        app:autoSizeStepGranularity="2sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Transaction ID"
+                                        android:textAlignment="textStart"
+                                        android:textColor="@color/gray_600"
+                                        android:textFontWeight="500"
+                                        android:textSize="17sp" />
+
+                                    <TextView
+                                        android:id="@+id/transactionId"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Loading..."
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/TextRegisterG"
+                                        android:textFontWeight="500"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMinTextSize="2sp"
+                                        app:autoSizeMaxTextSize="100sp"
+                                        app:autoSizeStepGranularity="2sp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="20dp"
+                                    android:alpha=".5"
+                                    android:background="?android:attr/listDivider" />
+                                android:alpha=".35"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Sender"
+                                        android:textAlignment="textStart"
+                                        android:textColor="@color/gray_600"
+                                        android:textFontWeight="500"
+                                        android:textSize="17sp" />
+
+                                    <TextView
+                                        android:id="@+id/senderName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Loading..."
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/TextRegisterG"
+                                        android:textFontWeight="500"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMinTextSize="2sp"
+                                        app:autoSizeMaxTextSize="100sp"
+                                        app:autoSizeStepGranularity="2sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Receiver"
+                                        android:textAlignment="textStart"
+                                        android:textColor="@color/gray_600"
+                                        android:textFontWeight="500"
+                                        android:textSize="17sp" />
+
+                                    <TextView
+                                        android:id="@+id/receiverName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Loading..."
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/TextRegisterG"
+                                        android:textFontWeight="500"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMinTextSize="2sp"
+                                        app:autoSizeMaxTextSize="100sp"
+                                        app:autoSizeStepGranularity="2sp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="20dp"
+                                    android:alpha=".50"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Total transfer"
+                                        android:textAlignment="textStart"
+                                        android:textColor="@color/TextRegisterG"
+                                        android:textFontWeight="500"
+                                        android:textSize="17sp" />
+
+                                    <TextView
+                                        android:id="@+id/transferAmount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:text="Loading..."
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/primary"
+                                        android:textFontWeight="500"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMinTextSize="2sp"
+                                        app:autoSizeMaxTextSize="100sp"
+                                        app:autoSizeStepGranularity="2sp" />
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="bottom">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/back_to_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Back to Home"
+                            android:textSize="18sp"
+                            app:cornerRadius="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/befor_send"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="40dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ripple_gray"
+                    android:backgroundTint="@color/InputBackround"
+                    android:clickable="true"
+                    app:cardCornerRadius="15dp"
+                    tools:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:minHeight="65dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/user_correct"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/InputBackround"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/userfullName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Ayache Amine"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/TextRegisterG"
+                                    android:textFontWeight="700"
+                                    android:textSize="25sp"
+                                    android:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/userName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="\@pople10"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/gray_600"
+                                    android:textFontWeight="500"
+                                    app:autoSizeTextType="uniform"
+                                    app:autoSizeMinTextSize="2sp"
+                                    app:autoSizeMaxTextSize="100sp"
+                                    app:autoSizeStepGranularity="2sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:clickable="false"
+                                android:outlineAmbientShadowColor="@color/InputBackround"
+                                android:outlineSpotShadowColor="@color/InputBackround"
+                                android:shadowColor="@color/InputBackround"
+                                app:backgroundTint="@color/InputBackround"
+                                app:icon="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                app:iconGravity="textEnd"
+                                app:iconSize="35dp"
+                                app:iconTint="@color/gray" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/number_amount_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:gravity="center"
+                        android:minHeight="65dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text=""
+                            android:textColor="@color/gray_600"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:id="@+id/amount_to_send"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0,00"
+                            android:textAlignment="center"
+                            android:textColor="@color/TextRegisterG"
+                            android:textFontWeight="700"
+                            android:textSize="35sp" />
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="$"
+                            android:textAlignment="center"
+                            android:textColor="@color/gray_600"
+                            android:textFontWeight="700"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/numbers_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingVertical="5dp"></LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingVertical="5dp">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/number_0"
+                                    android:layout_width="70dp"
+                                    android:layout_height="80dp"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:outlineAmbientShadowColor="@color/gray"
+                                    android:outlineSpotShadowColor="@color/gray"
+                                    android:shadowColor="@color/gray"
+                                    android:text="0"
+                                    android:textColor="@color/TextRegisterG"
+                                    android:textSize="25sp"
+                                    app:backgroundTint="@color/white"
+                                    app:cornerRadius="35dp"
+                                    app:elevation="2dp"></com.google.android.material.button.MaterialButton>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:paddingVertical="5dp">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/delete_button"
+                                    android:layout_width="70dp"
+                                    android:layout_height="80dp"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:outlineAmbientShadowColor="@color/gray"
+                                    android:outlineSpotShadowColor="@color/gray"
+                                    android:shadowColor="@color/gray"
+                                    android:textColor="@color/TextRegisterG"
+                                    android:textSize="25sp"
+                                    app:backgroundTint="@color/white"
+                                    app:cornerRadius="35dp"
+                                    app:elevation="2dp"
+                                    app:icon="@drawable/ic_baseline_backspace_24"
+                                    app:iconSize="32dp"
+                                    app:iconTint="@color/gray"></com.google.android.material.button.MaterialButton>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="25dp">
+
+                    <LinearLayout
+                        android:id="@+id/enter_user_form"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="40dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/unamecontainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_gravity="start"
+                            android:hint="Username or email"
+                            android:visibility="visible"
+                            app:boxBackgroundColor="@color/InputBackround"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxStrokeColor="@color/primary"
+                            app:boxStrokeWidth="0dp"
+                            app:boxStrokeWidthFocused="0dp"
+                            app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/uname"
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/text_error_uname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Please enter a valide user name !"
+                        android:textColor="@color/danger"
+                        android:textSize="14sp"
+                        tools:visibility="gone" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/send_money_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="18dp"
+                        android:text="Next"
+                        android:textSize="18sp"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

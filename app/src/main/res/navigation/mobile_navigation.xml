@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.trackiness.fastpay.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_homef" />
+
+    <fragment
+        android:id="@+id/navigation_statistic"
+        android:name="com.trackiness.fastpay.StatisticFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_statistic" />
+
+    <fragment
+        android:id="@+id/navigation_qrcode"
+        android:name="com.trackiness.fastpay.QRtCodeFragment"
+        android:label="QRCODE"
+        tools:layout="@layout/fragment_qr_code" />
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.trackiness.fastpay.CartsFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_cards" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.trackiness.fastpay.ProfileFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

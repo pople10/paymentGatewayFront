@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "504479077003",
+    "project_id": "fastpayaot",
+    "storage_bucket": "fastpayaot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504479077003:android:cc28b2bf616971c1ef3a8e",
+        "android_client_info": {
+          "package_name": "com.trackiness.fastpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504479077003-302nspm3089sv874te40ro8eigr6raqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHKEwGbiG-L-YCIxzftwCHBxaOCQoDq3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504479077003-302nspm3089sv874te40ro8eigr6raqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

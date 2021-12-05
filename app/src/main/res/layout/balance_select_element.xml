@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/balanceelement"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:clickable="true"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/label_b"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        android:paddingTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textFontWeight="600"
+        android:fontFamily="sans-serif-light"
+        android:text="Omar"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/gray"
+        android:layout_marginBottom="5dp"
+        />
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,19 @@
+<resources>
+    <style name="ButtonStyle">
+        <item name="android:textSize">@dimen/header_text</item>
+        <item name="android:textColor">@color/CTA_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/CTA_bg</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="Widget.Theme.Fastpay.MyView" parent="">
+        <item name="android:background">@color/white</item>
+        <item name="android:text">@color/TextRegisterG</item>
+        <item name="exampleColor">@color/light_blue_600</item>
+    </style>
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+</resources>

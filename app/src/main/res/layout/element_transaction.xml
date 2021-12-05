@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeWidth=".5dp"
+    app:cardCornerRadius="0dp"
+    android:id="@+id/cardViewElement"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeColor="@color/grayLight"
+    android:clickable="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_transaction"
+            android:clickable="false"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/greenLight"
+            app:cardCornerRadius="120dp"
+            app:icon="@drawable/ic_baseline_arrow_drop_up_24"
+            app:iconSize="50dp"
+            app:iconTint="@color/green"
+            app:cornerRadius="50dp"
+            android:rotation="0">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/FullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="XI smia dlmlmdldm"
+                android:maxWidth="200dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/TextRegisterG"
+                android:textFontWeight="700"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:text="11/10/2020"
+                android:textColor="@color/TextRegisterG"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:alpha="0.9"
+                android:text="-$65.58"
+                android:fontFamily="sans-serif-light"
+                android:textFontWeight="500"
+                android:textAlignment="textEnd"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:alpha="0.8"
+                android:text="Transfer (Balnace 1)"
+                android:textAlignment="textEnd"
+                android:textColor="@color/TextRegisterG"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
