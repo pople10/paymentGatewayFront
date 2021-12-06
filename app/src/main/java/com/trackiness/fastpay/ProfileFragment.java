@@ -71,6 +71,7 @@ public class ProfileFragment extends Fragment {
     LinearLayout crypto;
     LinearLayout qrwallet;
     LinearLayout help;
+    LinearLayout delete;
     View root;
     RequestQueue queue;
     ProfileService profileService;
@@ -120,6 +121,7 @@ public class ProfileFragment extends Fragment {
         qrwallet = root.findViewById(R.id.walletQRNav);
         Logout = root.findViewById(R.id.logout);
         help = root.findViewById(R.id.helpNav);
+        delete = root.findViewById(R.id.remobeNav);
         photoContainer = ((ImageView)root.findViewById(R.id.photoProfile));
         ResetPassword.setOnClickListener(e->{
           startActivity(new Intent(getContext(),ResetPasswordActivity.class));
@@ -177,6 +179,31 @@ public class ProfileFragment extends Fragment {
                 Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
+        });
+        delete.setOnClickListener(e->{
+            userService.delete(new VolleyCallBack() {
+                @Override
+                public void onSuccess() {
+                    Utility.removeToken(root.getContext());
+                    startActivity(new Intent(root.getContext(),LoginActivity.class));
+                }
+
+                @Override
+                public void onError(int error) {
+
+                }
+
+                @Override
+                public void beforeSend() {
+                    loader.show();
+                }
+
+                @Override
+                public void onFinish() {
+                    if(loader.isShowing())
+                        loader.dismiss();
+                }
+            });
         });
     }
 

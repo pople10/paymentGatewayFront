@@ -3,6 +3,8 @@ package com.trackiness.fastpay;
 import android.content.Context;
 import android.content.Intent;
 
+import com.trackiness.utility.Utility;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Alert extends SweetAlertDialog {
@@ -45,6 +47,22 @@ public class Alert extends SweetAlertDialog {
                 @Override
                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                     getContext().startActivity(new Intent(getContext(),VerifyActivity.class));
+                    sweetAlertDialog.dismiss();
+                }
+            });
+        }
+        if(super.getAlerType()==Alert.ERROR&&super.getContentText()!=null
+                &&(super.getContentText().equals("Unauthentificated")||
+                super.getContentText().equals("Your account is deleted")||
+                super.getContentText().equals("Your account is disabled")))
+        {
+            setConfirmText("Logout");
+            setCancelable(false);
+            setConfirmClickListener(new OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    Utility.removeToken(getContext());
+                    getContext().startActivity(new Intent(getContext(),LoginActivity.class));
                     sweetAlertDialog.dismiss();
                 }
             });

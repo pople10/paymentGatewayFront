@@ -802,4 +802,69 @@ public class UserService {
         });
         queue.add(stringRequest);
     }
+
+    public void delete(VolleyCallBack callBack)
+    {
+        String url = context.getString(R.string.server)+"/account/delete";
+        callBack.beforeSend();
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE,url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Map data = new Gson().fromJson(response.toString(),Map.class);
+                        new Alert(context,Alert.SUCCESS)
+                                .setContentText(data.get("done").toString())
+                                .show();
+                        callBack.onSuccess();
+                        callBack.onFinish();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                String body;
+                int statusCode = error.networkResponse.statusCode;
+                if(error.networkResponse.data!=null&&(statusCode==422)) {
+                    try {
+                        body = new String(error.networkResponse.data, "UTF-8");
+                        data = new Gson().fromJson(body, Map.class);
+                    } catch (UnsupportedEncodingException e) {
+
+                    }
+
+                }
+                else {
+                    new Alert(context,Alert.ERROR)
+                            .setContentText(context.getString(R.string.internal_error))
+                            .show();
+                }
+                callBack.onError(statusCode);
+                callBack.onFinish();
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer "+ Utility.extractToken(context));
+                return headers;
+            }
+        };
+        stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 500000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 500000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+        queue.add(stringRequest);
+    }
 }
