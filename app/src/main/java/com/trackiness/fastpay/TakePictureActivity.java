@@ -325,9 +325,9 @@ public class TakePictureActivity extends AppCompatActivity implements View.OnCli
                 Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), true);
                 bitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 50, out);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
                 BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inSampleSize = 4;
+                options.inSampleSize = 2;
                 bitmap = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()),null,options);
                 System.out.println(bitmap.getByteCount());
                 return null;

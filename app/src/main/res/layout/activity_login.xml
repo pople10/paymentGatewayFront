@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="3dp"
                             android:layout_weight="2"
-                            android:text="Remmeber me"
+                            android:text="Remember me"
                             android:textColor="@color/TextRegisterG"
                             android:textSize="18sp" />
 
