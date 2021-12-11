@@ -137,7 +137,7 @@ public class TransactionData {
         return preffix+amount+" "+currency;
     }
      public String getStringDate(){
-         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+         DateFormat dateFormat = new SimpleDateFormat("yyyy-MMM-dd");
          return dateFormat.format(date);
      }
 }
